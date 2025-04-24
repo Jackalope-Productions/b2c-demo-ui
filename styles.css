@@ -1,0 +1,115 @@
+/* --------- Page background --------- */
+body
+{
+     margin: 0;
+     font-family: "Segoe UI", Roboto, sans-serif;
+     background: #1e1e2f;
+     color: #ffffff;
+     display: flex;
+     justify-content: center;
+}
+
+/* --------- Card that B2C injects into (#api div) --------- */
+#api
+{
+     box-sizing: border-box;
+     background: #2d2d45;
+     padding: 2rem 2.5rem;
+     margin: 3rem 1rem;
+     border-radius: 8px;
+     width: 100%;
+     max-width: 360px;
+     box-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+
+/* Headings Azure B2C spits out */
+#api h1,
+#api h2,
+#api h3,
+#api h4
+{
+     color: #ffffff;
+     margin: 1.2rem 0 .6rem;
+}
+
+/* --------- Form controls --------- */
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{
+     width: 100%;
+     padding: .65rem .75rem;
+     margin: .3rem 0 1rem;
+     border: 1px solid #555770;
+     border-radius: 4px;
+     background: #1f1f32;
+     color: #fff;
+     font-size: .95rem;
+     box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus
+{
+     outline: none;
+     border-color: #4da3ff;
+     box-shadow: 0 0 0 2px rgba(77,163,255,.3);
+}
+
+/* Buttons (incl. social provider buttons) */
+button,
+input[type="submit"]
+{
+     display: block;
+     width: 100%;
+     padding: .7rem;
+     border: none;
+     border-radius: 4px;
+     background: #4da3ff;
+     color: #ffffff;
+     font-weight: 600;
+     font-size: 1rem;
+     cursor: pointer;
+     margin-top: .5rem;
+}
+
+button:hover,
+input[type="submit"]:hover
+{
+     background: #6cb5ff;
+}
+
+button:disabled,
+input[type="submit"]:disabled
+{
+     background: #3b3d55;
+     cursor: default;
+}
+
+/* --------- Links --------- */
+a
+{
+     color: #4da3ff;
+     text-decoration: none;
+}
+
+a:hover
+{
+     text-decoration: underline;
+}
+
+/* Extra spacing between “OR” groups */
+.divider,
+.or,
+hr
+{
+     margin: 1.5rem 0 1.2rem;
+}
+
+/* Hide the nasty default list dots some templates output */
+ul
+{
+     list-style: none;
+     padding: 0;
+}
