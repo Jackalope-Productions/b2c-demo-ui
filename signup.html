@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in – Contoso</title>
+
+    <!-- 1) Inline or external CSS -->
+    <style>
+        body            { font-family: "Segoe UI", sans-serif; background:#1e1e2f; color:#fff; margin:0 }
+        .contoso-logo   { max-width:140px; margin:40px auto 10px; display:block }
+        #api            { padding:2rem; background:#2d2d45; border-radius:8px; width:320px; margin:auto }
+    </style>
+
+    <!-- 2) If using external CSS -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- 3) B2C injects its markup into #api at runtime -->
+</head>
+<body>
+    <img class="contoso-logo" src="https://via.placeholder.com/140x40?text=Contoso" alt="Contoso"/>
+
+    <div id="api"></div> <!-- **required** -->
+
+    <!-- Optional page-layout JS (needs v2.1 enabled in Page layouts) -->
+    <!-- <script src="custom.js" async></script> -->
+</body>
+</html>
