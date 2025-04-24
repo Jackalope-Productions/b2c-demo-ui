@@ -1,0 +1,214 @@
+/* ============================================================
+   Azure AD B2C – “Fantastical & Comical” skin
+   Place next to signup.html and reference with an ABSOLUTE URL.
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600&display=swap");
+
+/* ---------- Star-field background (pure CSS) ---------- */
+body
+{
+     margin: 0;
+     font-family: 'Poppins', sans-serif;
+     color: #ffffff;
+     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+     overflow-x: hidden;
+}
+
+/* twinkling specks */
+body::before
+{
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 150%;
+     height: 150%;
+     pointer-events: none;
+     background-image:
+          radial-gradient(2px 2px at 20% 40%, rgba(255,255,255,.8) 50%, transparent 51%),
+          radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,.6) 50%, transparent 51%),
+          radial-gradient(1.5px 1.5px at 10% 70%, rgba(255,255,255,.7) 50%, transparent 51%),
+          radial-gradient(1.5px 1.5px at 90% 20%, rgba(255,255,255,.4) 50%, transparent 51%);
+     animation: drift 40s linear infinite;
+     opacity: .7;
+}
+
+/* slow drift */
+@keyframes drift
+{
+     from { transform: translate3d(-25%, -25%, 0); }
+     to   { transform: translate3d(25%, 25%, 0);  }
+}
+
+/* ---------- B2C content container ---------- */
+#api
+{
+     box-sizing: border-box;
+     /* glassy panel with neon border */
+     background: rgba(46, 49, 72, .55);
+     border-radius: 18px;
+     padding: 2.5rem 2.75rem;
+     width: 100%;
+     max-width: 430px;
+     margin: 3rem auto;
+     backdrop-filter: blur(10px);
+     /* animated gradient border */
+     border: 3px solid transparent;
+     background-image:
+          linear-gradient(46deg, rgba(46,49,72,.55), rgba(46,49,72,.55)),
+          linear-gradient(46deg, #ff00cc, #3333ff, #00e0ff, #ffde59);
+     background-clip: padding-box, border-box;
+     background-origin: padding-box, border-box;
+     animation: holo 12s linear infinite;
+}
+@keyframes holo
+{
+     to { background-position: 400% 0, 0 0; }
+}
+
+/* ---------- Headings ---------- */
+#api h1, #api h2, #api h3
+{
+     font-family: 'Caveat', cursive;
+     font-size: 2.25rem;
+     margin: 0 0 1.2rem;
+     line-height: 1;
+     color: #ffde59;
+     text-shadow: 2px 2px 0 #3333ff;
+}
+
+/* smaller section headings (B2C injects <h2>) */
+#api h2
+{
+     font-size: 1.6rem;
+     margin-top: 2rem;
+     color: #ffffff;
+     text-shadow: none;
+}
+
+/* ---------- Inputs ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{
+     width: 100%;
+     padding: .8rem 1rem;
+     margin: .3rem 0 1.2rem;
+     border-radius: 8px;
+     border: 2px solid #9d7dff;
+     background: rgba(255,255,255,.1);
+     color: #fff;
+     font-size: 1rem;
+     transition: border-color .2s, box-shadow .2s;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder { color: #b4b8ff; }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus
+{
+     outline: none;
+     border-color: #ff00cc;
+     box-shadow: 0 0 0 3px rgba(255,0,204,.35);
+}
+
+/* ---------- Primary buttons (sign-in, continue) ---------- */
+button,
+input[type="submit"]
+{
+     display: block;
+     width: 100%;
+     padding: .9rem 1rem;
+     margin-top: .5rem;
+     border: none;
+     border-radius: 50px;
+     font-size: 1.05rem;
+     font-weight: 600;
+     letter-spacing: .5px;
+     color: #fff;
+     cursor: pointer;
+     background: linear-gradient(135deg, #ff00cc 0%, #3333ff 50%, #00e0ff 100%);
+     background-size: 250% 250%;
+     transition: transform .2s, box-shadow .2s, background-position .6s;
+}
+
+button:hover,
+input[type="submit"]:hover
+{
+     transform: translateY(-4px);
+     box-shadow: 0 8px 20px rgba(0,0,0,.4);
+     background-position: 100% 0;
+}
+
+button:active,
+input[type="submit"]:active { transform: translateY(-1px); }
+
+/* ---------- Social identity buttons (e.g., Microsoft) ---------- */
+button[id^="social_"],               /* classic template */
+button[data-provider],               /* new templates */
+button[title="Microsoft"]            /* catch-all fallback */
+{
+     position: relative;
+     background: #24243e;
+     padding-left: 3.2rem;           /* leave room for icon */
+     text-align: left;
+}
+
+/* “M” icon */
+button[id^="social_"]::before,
+button[data-provider]::before,
+button[title="Microsoft"]::before
+{
+     content: "🪄";
+     position: absolute;
+     left: 1rem;
+     top: 50%;
+     transform: translateY(-50%) rotate(10deg);
+     font-size: 1.3rem;
+}
+
+/* ---------- Links ---------- */
+a
+{
+     color: #00e0ff;
+     text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ---------- “OR” dividers ---------- */
+.or, .divider
+{
+     text-align: center;
+     margin: 2rem 0 1.5rem;
+     font-weight: 600;
+     color: #ffde59;
+     position: relative;
+}
+.or::before, .or::after,
+.divider::before, .divider::after
+{
+     content: "";
+     position: absolute;
+     top: 50%;
+     width: 35%;
+     height: 2px;
+     background: linear-gradient(90deg, transparent, #6361ff);
+}
+.or::before, .divider::before { left: 0; }
+.or::after,  .divider::after  { right: 0; }
+
+/* ---------- Misc spacing ---------- */
+ul { list-style: none; padding: 0; }
+
+/* ——— Brand logo ——— */
+.brand-logo
+{
+     display: block;
+     max-width: 180px;      /* shrink if someone uploads a monster PNG */
+     margin: 42px auto 16px;
+     filter: drop-shadow(0 0 6px rgba(0, 224, 255, .35));
+}
